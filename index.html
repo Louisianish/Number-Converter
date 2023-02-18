@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Converter</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1>Number Converter</h1>
+  <main>
+    <p class="instructions">
+      <b>Convert Arabic numerals to Roman numerals:</b>
+      <br/>
+      (* Enter a number greater than 0 *)
+    </p>
+    <input type="number" id="int-to-roman-input" min="1" oninput="validity.valid||(value=''); enableButtons();" />
+    <button type="submit" id="int-to-roman-btn" onclick="intToRoman(); enableButtons();" for="int-to-roman-input" disabled>Submit</button>
+    <p id="int-to-roman-result"></p>
+    <p class="instructions">
+      <b>Convert Roman numerals to Arabic numerals:</b>
+      <br/>
+      (* Valid letters: I, V, X, L, C, D, M *)
+    </p>
+    <input type="text" id="roman-to-int-input" pattern="[IVXLCDMivxlcdm]+" oninput="validity.valid||(value=''); enableButtons();" />
+    <button type="submit" id="roman-to-int-btn" onclick="romanToInt(); enableButtons();" for="roman-to-int-input" disabled>Submit</button>
+    <p id="roman-to-int-result"></p>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
